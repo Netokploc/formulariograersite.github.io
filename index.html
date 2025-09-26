@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🚁 GRAER</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #161b22;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header h1 {
+      margin: 0;
+      color: #58a6ff;
+      font-size: 20px;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #e6edf3;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #58a6ff;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: #161b22;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #58a6ff;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 5px;
+      background: #0d1117;
+      color: #e6edf3;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #238636;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #2ea043;
+    }
+    .aviso {
+      margin-top: 25px;
+      padding: 15px;
+      border-left: 4px solid #58a6ff;
+      background: #0d1117;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .aba {
+      display: none;
+    }
+    .aba.ativa {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚁 GRAER</h1>
+    <nav>
+      <a href="#" onclick="mostrarAba('inscricao')">Inscrição</a>
+      <a href="#" onclick="mostrarAba('duvidas')">Dúvidas</a>
+      <a href="#" onclick="mostrarAba('avisos')">Avisos</a>
+      <a href="#" onclick="mostrarAba('contato')">Contato</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- ABA INSCRIÇÃO -->
+    <div id="inscricao" class="aba ativa">
+      <h2>Formulário de Inscrição - GRAER</h2>
+      <form id="graerForm">
+        <label>Nome:</label>
+        <input type="text" name="nome" required>
+        <label>Patente:</label>
+        <input type="text" name="patente" required>
+        <label>ID do Discord:</label>
+        <input type="text" name="discord" required>
+        <label>Qual seu interesse em entrar no GRAER?</label>
+        <textarea name="interesse" required></textarea>
+        <label>Por qual motivo quer entrar?</label>
+        <textarea name="motivo" required></textarea>
+        <label>Um piloto sem braçal pode pilotar?</label>
+        <select name="sembracal" required>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+        <label>Você é uma pessoa responsável?</label>
+        <select name="responsavel" required>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+        <label>Possui experiência com helicóptero?</label>
+        <textarea name="experiencia"></textarea>
+        <label>Fale um pouco sobre você:</label>
+        <textarea name="sobre"></textarea>
+        <label>Pontos positivos:</label>
+        <textarea name="positivos"></textarea>
+        <label>Pontos negativos:</label>
+        <textarea name="negativos"></textarea>
+        <label>Faça uma modulação de um roubo a ATM:</label>
+        <textarea name="atm"></textarea>
+        <label>Cite 10 locais da cidade:</label>
+        <textarea name="locais"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div class="aviso">
+        <strong>Como sei se fui aprovado (a)?</strong><br>
+        Você será marcado na aba de convocações na parte GRAER se for aprovado, dentro do prazo de 24 horas.
+      </div>
+    </div>
+
+    <!-- ABA DÚVIDAS -->
+    <div id="duvidas" class="aba">
+      <h2>❓ Dúvidas Frequentes</h2>
+      <p><strong>1. Quem pode se inscrever?</strong><br> Qualquer membro que atenda aos requisitos básicos da unidade.</p>
+      <p><strong>2. Quanto tempo demora para sair o resultado?</strong><br> Até 24 horas após o envio.</p>
+      <p><strong>3. Onde vejo os aprovados?</strong><br> Na aba de convocações, no servidor do Discord.</p>
+    </div>
+
+    <!-- ABA AVISOS -->
+    <div id="avisos" class="aba">
+      <h2>📢 Avisos</h2>
+      <p>- As metas serão cobradas semanalmente.</p>
+      <p>- Justifique suas ausências no canal apropriado.</p>
+      <p>- O não cumprimento das regras pode resultar em desligamento.</p>
+    </div>
+
+    <!-- ABA CONTATO -->
+    <div id="contato" class="aba">
+      <h2>📞 Contato</h2>
+      <p>Para dúvidas adicionais, entre em contato pelo Discord:</p>
+      <p><strong>👮‍♂️ Comando GRAER:</strong> @netoresplandehz
+      <p><strong>📧 Email:</strong> abidalxaulo@gmail.com</p>
+    </div>
+  </div>
+
+  <script>
+    // trocar abas
+    function mostrarAba(id) {
+      document.querySelectorAll('.aba').forEach(div => div.classList.remove('ativa'));
+      document.getElementById(id).classList.add('ativa');
+    }
+
+    // envio do formulário
+    const scriptURL = "https://script.google.com/macros/s/AKfycbyMRMt0PEBshGFd6Dvu46Uv9nvLdR04tdR-TQOsRfqMlqOJErUzJJrKZYHTd0UnuO902Q/exec";
+    const form = document.getElementById("graerForm");
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const dados = Object.fromEntries(new FormData(form));
+      fetch(scriptURL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dados)
+      })
+      .then(() => {
+        alert("Enviado com sucesso!");
+        form.reset();
+      })
+      .catch(() => alert("Erro ao enviar. Tente novamente."));
+    });
+  </script>
+</body>
+</html>
